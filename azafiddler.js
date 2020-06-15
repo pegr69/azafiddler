@@ -12,7 +12,7 @@
 window.addEventListener("load", init, false);
 
 // Adds a simple external tweak to the Avanza links.
-
+//
 function init()
 {
   console.info("Hi Avanza!");
