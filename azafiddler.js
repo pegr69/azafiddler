@@ -4,11 +4,11 @@
 // @author			Anonymous
 // @include			https://www.avanza.se/*
 // @exclude			https://www.xxxxxxxxx.se/private*
-// @version 0.0.1
+// @version 0.0.2
 // @namespace https://greasyfork.org/users/noone
 // ==/UserScript==
 
-
+// Test
 window.addEventListener("load", init, false);
 
 // Adds a simple external tweak to the Avanza links.
