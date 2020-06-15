@@ -23,8 +23,12 @@ function tweaklinks(doc)
 {
   // find all links, add external attribute if not set.
   for (var a,i=0; a=doc.getElementsByTagName("a")[i]; ++i) {
-    if (a.target == "") {
-        a.target = a.title;
+    if (a.target === "") {
+      if (a.title === "") {
+        a.target = "_blank";
+      }else {
+        a.target = a.title; 
+      }
     }
   }
 }
