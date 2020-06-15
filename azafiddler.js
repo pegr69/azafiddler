@@ -3,7 +3,7 @@
 // @description		Some Avanza site tweaks to ease the trading day
 // @author			Anonymous
 // @include			https://www.avanza.se/*
-// @version 0.0.3
+// @version 0.4
 // @namespace https://greasyfork.org/users/593500
 // ==/UserScript==
 
