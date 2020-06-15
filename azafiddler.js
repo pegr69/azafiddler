@@ -4,8 +4,8 @@
 // @author			Anonymous
 // @include			https://www.avanza.se/*
 // @exclude			https://www.xxxxxxxxx.se/private*
-// @version 0.0.2
-// @namespace https://greasyfork.org/users/noone
+// @version 0.0.3
+// @namespace https://greasyfork.org/users/593500
 // ==/UserScript==
 
 // Test
