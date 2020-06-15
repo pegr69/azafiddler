@@ -25,7 +25,7 @@ function tweaklinks(doc)
   for (var a,i=0; a=doc.getElementsByTagName("a")[i]; ++i) {
     if (a.target === "") {
       if (a.title === "") {
-        a.target = "_blank";
+        // Do nothing for now
       }else {
         a.target = a.title; 
       }
