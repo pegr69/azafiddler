@@ -1,9 +1,9 @@
 // ==UserScript==
-// @name			Avanza fiddler
-// @description		Some Avanza site tweaks to ease the trading day
+// @name			  Avanza fiddler
+// @description	Some Avanza site tweaks to ease the trading day
 // @author			pegr69
 // @include			https://www.avanza.se/*
-// @version 0.6
+// @version     0.7
 // @namespace https://greasyfork.org/users/593500
 // ==/UserScript==
 
@@ -40,15 +40,30 @@ function fixordervindow(doc)
     }
 }
 
+// Add an external target to all valid title links
+
 function tweaklinks(doc)
 {
+    // Do not touch these link titles
+  let ignoreTitles=["Lägg till","Ta Bort"];
+
   // find all links, add external attribute if not set.
-  for (var a,i=0; a=doc.getElementsByTagName("a")[i]; ++i) {
+  for (let a,i=0; a=doc.getElementsByTagName("a")[i]; ++i) {
     if (a.target === "") {
       if (a.title === "") {
         // Do nothing for now
       }else {
-        a.target = a.title; 
+          let ignore = false;
+          ignoreTitles.forEach(function(value){
+              let t = a.title.search(value);
+              if (t != -1) {
+                  console.info("Ignoring:" + value + " for title:" + a.title);
+                  ignore = true;
+              }
+           });
+          if ( ! ignore ) {
+              a.target = a.title;
+          }
       }
     }
   }
