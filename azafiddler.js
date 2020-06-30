@@ -5,6 +5,9 @@
 // @include			https://www.avanza.se/*
 // @version         0.9
 // @namespace       https://greasyfork.org/users/593500
+// @copyright      2020, Peter Grape
+// @license        CDDL-1.0
+
 // ==/UserScript==
 
 window.addEventListener("load", init, false);
