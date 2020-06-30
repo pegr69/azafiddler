@@ -1,8 +1,8 @@
 // ==UserScript==
-// @name			    Avanza fiddler
-// @description	 Some Avanza site tweaks to ease the trading day
-// @author			 pegr69
-// @include			 https://www.avanza.se/*
+// @name           Avanza fiddler
+// @description    Some Avanza site tweaks to ease the trading day
+// @author         pegr69
+// @include	       https://www.avanza.se/*
 // @version        0.9
 // @namespace      https://greasyfork.org/users/593500
 // @copyright      2020, Peter Grape
