@@ -1,21 +1,45 @@
 // ==UserScript==
-// @name			  Avanza fiddler
-// @description	Some Avanza site tweaks to ease the trading day
+// @name			Avanza fiddler
+// @description		Some Avanza site tweaks to ease the trading day
 // @author			pegr69
 // @include			https://www.avanza.se/*
-// @version     0.7
-// @namespace https://greasyfork.org/users/593500
+// @version         0.9
+// @namespace       https://greasyfork.org/users/593500
 // ==/UserScript==
 
-//
 window.addEventListener("load", init, false);
+window.addEventListener("keydown", keytrap, true);
+
+function keytrap (e) {
+
+   // let prevButton = document.getElementsByClassName('fa fa-angle-left')[0];
+   // let nextButton = document.getElementsByClassName('fa fa-angle-right')[0];
+
+    try {
+     //  let isFirstPage = prevButton.parentElement.parentElement.className == "disabled";
+     //  let isLastPage = nextButton.parentElement.parentElement.className == "disabled";
+
+    if (window.name === "orderWindow") {
+        console.info("Avanza Orderwindow");
+        if (e.keyCode == 37) { // Left arrow press
+           console.log("Adding shares count...");
+        }
+        else if (e.keyCode == 39) { // Right arrow press
+            console.log("Deleting shares count...");
+        }
+    }
+    }
+    catch(error) {
+        // No navigation present.
+    }
+}
 
 // Adds a simple external tweak to the Avanza links.
 // Minor fixes for order window
 
 function init()
 {
-  console.info("Init Avanza Fiddler.");
+  console.info("Init Avanza Fiddler, version 0.9");
   // Tweak all links to external target.
   tweaklinks(document);
   // Fix order window
@@ -46,12 +70,26 @@ function tweaklinks(doc)
 {
     // Do not touch these link titles
   let ignoreTitles=["Lägg till","Ta Bort"];
-
-  // find all links, add external attribute if not set.
+  let mapfixedlinks = [
+      { href: 'https://www.avanza.se/hall-koll/min-borsskarm.html', name: 'borsskarm' },
+      { href: 'https://www.avanza.se/min-ekonomi/oversikt.html', name: 'oversikt' },
+      { href: 'https://www.avanza.se/hem/senaste.html', name: 'senaste' },
+      { href: 'https://www.avanza.se/min-profil/installningar.html', name: 'installningar' }
+  ];
+    // find all links, add external attribute if not set.
   for (let a,i=0; a=doc.getElementsByTagName("a")[i]; ++i) {
     if (a.target === "") {
       if (a.title === "") {
-        // Do nothing for now
+          // console.log("AH:" + a.href);
+
+          let ml = mapfixedlinks.find(function(element) {
+              return a.href == element.href;
+          });
+
+          if ( ml != null ){
+              a.target = ml.name;
+              }
+
       }else {
           let ignore = false;
           ignoreTitles.forEach(function(value){
