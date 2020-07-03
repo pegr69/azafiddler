@@ -1,12 +1,18 @@
 // ==UserScript==
-// @name			Avanza fiddler
-// @name:sv         Avanza fix o trix
-// @description		Some Avanza site tweaks to ease the trading day
-// @description:sv	Lite Avanza site uppdateringar för att underlätta trading dagen
-// @author			pegr69
-// @include			https://www.avanza.se/*
-// @version         0.9.1
-// @namespace       https://greasyfork.org/users/593500
+// @name           Avanza fiddler
+// @name:sv        Avanza fix o trix
+// @description	   Some Avanza site tweaks to ease the trading day
+// @description:sv Lite Avanza site uppdateringar för att underlätta trading dagen
+// @author         pegr69
+// @include        https://www.avanza.se/*
+// @version        0.9.1
+// @namespace      https://greasyfork.org/users/593500
+// @copyright      2020, Peter Grape
+// @license        CDDL-1.0
+// @icon           http://pics.smotri.com/cskins/blue/smiles/bt.gif
+// @run-at         document-end
+// @grant          none
+
 // ==/UserScript==
 
 window.addEventListener("load", init, false);
