@@ -1,18 +1,13 @@
 // ==UserScript==
-// @name           Avanza fiddler
-// @description    Some Avanza site tweaks to ease the trading day
-// @author         pegr69
-// @include        https://www.avanza.se/*
-// @version        0.9
-// @namespace      https://greasyfork.org/users/593500
-// @copyright      2020, Peter Grape
-// @license        CDDL-1.0
-// @icon           http://pics.smotri.com/cskins/blue/smiles/bt.gif
-// @run-at         document-end
-// @grant          none
-
+// @name			Avanza fiddler
+// @name:sv         Avanza fix o trix
+// @description		Some Avanza site tweaks to ease the trading day
+// @description:sv	Lite Avanza site uppdateringar för att underlätta trading dagen
+// @author			pegr69
+// @include			https://www.avanza.se/*
+// @version         0.9.1
+// @namespace       https://greasyfork.org/users/593500
 // ==/UserScript==
-
 
 window.addEventListener("load", init, false);
 window.addEventListener("keydown", keytrap, true);
@@ -27,7 +22,7 @@ function keytrap (e) {
      //  let isLastPage = nextButton.parentElement.parentElement.className == "disabled";
 
     if (window.name === "orderWindow") {
-        console.info("Avanza Orderwindow");
+        // console.info("Avanza Orderwindow");
         if (e.keyCode == 37) { // Left arrow press
            console.log("Adding shares count...");
         }
@@ -39,6 +34,7 @@ function keytrap (e) {
     catch(error) {
         // No navigation present.
     }
+
 }
 
 // Adds a simple external tweak to the Avanza links.
@@ -46,7 +42,7 @@ function keytrap (e) {
 
 function init()
 {
-  console.info("Init Avanza Fiddler, version 0.9");
+  console.info("Init Avanza Fiddler, version 0.9.1");
   // Tweak all links to external target.
   tweaklinks(document);
   // Fix order window
