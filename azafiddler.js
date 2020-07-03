@@ -9,7 +9,6 @@
 // @namespace      https://greasyfork.org/users/593500
 // @copyright      2020, Peter Grape
 // @license        CDDL-1.0
-// @icon           http://pics.smotri.com/cskins/blue/smiles/bt.gif
 // @run-at         document-end
 // @grant          none
 
